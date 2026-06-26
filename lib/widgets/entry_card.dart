@@ -1,4 +1,5 @@
 import 'package:email_summarizer/models/email_summary_entry.dart';
+import 'package:intl/intl.dart';
 import 'package:flutter/material.dart';
 
 class EntryCard extends StatelessWidget {
@@ -19,7 +20,7 @@ class EntryCard extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              entry.createdAt.toIso8601String(),
+              DateFormat('MM-dd-yyyy hh:mm').format(entry.createdAt),
               style: TextStyle(
                 fontSize: 16,
                 fontWeight: FontWeight.bold
@@ -29,7 +30,7 @@ class EntryCard extends StatelessWidget {
             SizedBox(height: 8,),
 
             Text(
-              entry.text,
+              entry.title == '' ? 'Untitled Entry' : entry.title,
               style: TextStyle(
                 fontSize: 16,
                 fontWeight: FontWeight.bold

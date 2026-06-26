@@ -2,7 +2,7 @@ class EmailSummaryEntry {
   final String id;
   final String text;
   final DateTime createdAt;
-  final String? title;
+  final String title;
   final List<String> eventTimes;
   final List<String> locations;
   final List<String> emailAddresses;
@@ -12,7 +12,7 @@ class EmailSummaryEntry {
     required this.id,
     required this.createdAt,
     required this.text,
-    this.title,
+    required this.title,
     this.eventTimes = const [],
     this.locations = const [],
     this.emailAddresses = const [],
@@ -36,7 +36,7 @@ class EmailSummaryEntry {
     return EmailSummaryEntry(
       id: map['id'] as String,
       createdAt: DateTime.parse(map['createdAt'] as String),
-      title: map['title'] as String?,
+      title: map['title'] as String,
       text: map['text'] as String,
       eventTimes: List<String>.from(map['eventTimes'] ?? []),
       locations: List<String>.from(map['locations'] ?? []),
