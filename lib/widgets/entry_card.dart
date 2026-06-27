@@ -20,7 +20,7 @@ class EntryCard extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              DateFormat('MM-dd-yyyy hh:mm').format(entry.createdAt),
+              "Created on: ${DateFormat('MM-dd-yyyy hh:mm').format(entry.createdAt)}",
               style: TextStyle(
                 fontSize: 16,
                 fontWeight: FontWeight.bold

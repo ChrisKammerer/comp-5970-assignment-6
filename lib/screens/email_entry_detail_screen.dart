@@ -47,7 +47,7 @@ class _EmailEntryDetailScreenState extends State<EmailEntryDetailScreen> {
     super.initState();
     final e = widget.entry;
 
-    titleController = TextEditingController(text: e.title ?? '');
+    titleController = TextEditingController(text: e.title);
 
     fieldGroups = {
       'eventTimes': FieldControllerGroup(
